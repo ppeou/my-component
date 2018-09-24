@@ -10,7 +10,9 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
  */
 class P1MediaObject extends PolymerElement {
   static get properties() {
+    const {ROOT} = window.P1_GLOBAL || {};
     return {
+      compRoot: {type: String, value: ROOT || '/'},
       imgPos: {type: String, value: 'left'},
       imgSize: String,
       imgSrc: String,
@@ -20,7 +22,7 @@ class P1MediaObject extends PolymerElement {
   }
   static get template() {
     return html`
-      <link rel="stylesheet" href="/css/p1-media-object-style.css">  
+      <link rel="stylesheet" href="[[compRoot]]css/p1-media-object-style.css">  
       <div class$="media media-[[imgPos]]">
          <div class$="img img-[[imgPos]] is-[[imgSize]]x[[imgSize]] img-[[imgAlign]]">
           <img src$="[[imgSrc]]">

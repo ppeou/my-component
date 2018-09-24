@@ -45,8 +45,9 @@ class P1Layout extends PolymerElement {
   }
 
   static get properties() {
+    const {ROOT} = window.P1_GLOBAL || {};
     return {
-      compRoot: {type: String, value: '/'},
+      compRoot: {type: String, value: ROOT || '/'},
       isAsideOpen: {type: Boolean, reflectToAttribute: true },
     };
   }
