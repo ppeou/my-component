@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P1 Layout</title>
+
+  <script type="module" src="../node_modules/@polymer/polymer/lib/elements/custom-style.js"></script>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module" src="../p1-layout.js"></script>
+
+  <style>
+    body {padding: 0; margin: 0;}
+    h1 {margin: 0; display: inline-block; padding-left: 1rem;}
+
+    @media screen and (min-width: 1087px) {
+      .is-mobile {display: none;}
+    }
+  </style>
+  <custom-style>
+    <style>
+      html {
+        --p1-nav-top-height: 50px;
+        --p1-nav-bottom-height: 50px;
+        --p1-layout-p1-section-aside: {
+          background-color: #ffaf24;
+        };
+        --p1-layout-section-main: {
+          background-color: blue;
+        };
+        --p1-layout-nav-top: {
+          background-color: yellow;
+        };
+        --p1-layout-nav-bottom: {
+          background-color: green;
+        };
+        --p1-layout-content: {
+          background-color: #00e7eb;
+        };
+        --p1-layout-p1-section-aside-mobile: {
+          max-width: 300px;
+        }
+      }
+    </style>
+  </custom-style>
+</head>
+<body>
+<p1-layout id="p1Layout">
+  <div slot="aside-item">
+    <h1>Navigation Left</h1>
+    <button class="is-mobile" onclick="toggleSideBar(this,event)">Toggle Nav</button>
+  </div>
+  <div slot="nav-top">
+    <h1>Navigation Left</h1>
+  </div>
+  <div slot="content-main">
+    <h1>Main Content</h1>
+  </div>
+  <div slot="nav-bottom">
+    <h1>Navigation Bottom</h1><button class="is-mobile" onclick="toggleSideBar(this,event)">Toggle Nav</button>
+  </div>
+</p1-layout>
+
+<script>
+  function toggleSideBar(elem, event) {
+    console.log(elem, event);
+    document.getElementById('p1Layout').isAsideOpen = !document.getElementById('p1Layout').isAsideOpen;
+  }
+</script>
+
+</body>
+</html>

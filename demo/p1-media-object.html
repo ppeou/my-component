@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>p1-layout demo</title>
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module" src="../p1-media-object.js"></script>
+</head>
+<body>
+<style>
+  p1-media-object {
+    display: inline-block;
+    width: 25%;
+    border: solid 1px #ccc;
+    margin: 1rem;
+  }
+</style>
+<div class="vertical-section-container centered">
+  <p1-media-object img-size="128"
+                   img-src="/img/128x128.png"
+                   img-align="center"
+                   text-align="left">
+      <strong>Media Object</strong>
+      <small>Image Default/Left</small>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
+      vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+  </p1-media-object>
+  <p1-media-object img-pos="right"
+                   img-size="128"
+                   img-src="/img/128x128.png"
+                   img-align="end"
+                   text-align="right">
+      <strong>Media Object</strong>
+      <small>Image Right</small>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
+      vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+  </p1-media-object>
+  <p1-media-object img-pos="top"
+                   img-size="128"
+                   img-src="/img/128x128.png"
+                   img-align="center"
+                   text-align="start">
+      <strong>Media Object</strong>
+      <small>Image Top</small>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
+      vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+  </p1-media-object>
+  <p1-media-object img-pos="bottom"
+                   img-size="64"
+                   img-src="/img/128x128.png"
+                   img-align="end"
+                   text-align="left">
+      <strong>Media Object</strong>
+      <small>Image Bottom</small>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
+      vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+  </p1-media-object>
+</div>
+</body>
+</html>

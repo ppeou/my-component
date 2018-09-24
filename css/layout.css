@@ -1,0 +1,64 @@
+.body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.section {
+  flex: 1 1 auto;
+}
+
+
+.section.is-main {
+  width: calc(100% - var(--p1-layout-aside-width, 300px));
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
+  @apply --p1-layout-content;
+}
+
+.nav.is-top {
+  height:  var(--p1-nav-top-height, 75px);
+}
+
+.nav.is-bottom {
+  height:  var(--p1-nav-bottom-height, 75px);
+}
+
+
+.section.is-aside {
+  width: var(--p1-aside-width, 300px);
+  z-index: 2;
+  box-shadow: 4px 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (min-width: 1088px) {
+  .section.is-aside {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1087px) {
+  .section.is-aside {
+    position: absolute;
+    width: 90vw;
+    height: 100vh;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform .3s ease-in-out, width .3s ease-in-out;
+    transform: translate(-90vw, 0);
+  }
+
+  :host([is-aside-open]) .section.is-aside {
+    transform: translate(0, 0);
+  }
+}
+
