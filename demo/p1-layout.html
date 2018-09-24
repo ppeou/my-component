@@ -7,8 +7,11 @@
 
   <script type="module" src="../node_modules/@polymer/polymer/lib/elements/custom-style.js"></script>
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-  <script type="module" src="../p1-layout.js"></script>
 
+  <script>
+    window.Polymer = {rootPath: '/'};
+  </script>
+  <script type="module" src="../p1-layout.js"></script>
   <style>
     body {padding: 0; margin: 0;}
     h1 {margin: 0; display: inline-block; padding-left: 1rem;}

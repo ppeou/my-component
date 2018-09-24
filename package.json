@@ -1,6 +1,7 @@
 {
-  "name": "p1-layout",
-  "main": "p1-layout.js",
+  "name": "@ppeou/my-component",
+  "main": "index.html",
+  "version": "0.0.2",
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },

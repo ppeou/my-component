@@ -13,7 +13,7 @@ import '@webcomponents/shadycss/entrypoints/apply-shim.js';
 class P1Layout extends PolymerElement {
   static get template() {
     return html`      
-      <link rel="stylesheet" href="/css/layout.css">
+      <link rel="stylesheet" href="[[compRoot]]css/layout.css">
       <style>
         :host {display: block;}
         .body {@apply --p1-layout;}
@@ -46,6 +46,7 @@ class P1Layout extends PolymerElement {
 
   static get properties() {
     return {
+      compRoot: {type: String, value: '/'},
       isAsideOpen: {type: Boolean, reflectToAttribute: true },
     };
   }
