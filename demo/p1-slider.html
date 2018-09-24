@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P1 Slider</title>
+
+  <script type="module" src="../node_modules/@polymer/polymer/lib/elements/custom-style.js"></script>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module" src="/lib/jquery.js"></script>
+  <script type="module" src="/lib/jquery-ui.js"></script>
+  <script type="module" src="../p1-slider.js"></script>
+
+</head>
+<body>
+<p1-slider id="slider" onchange="onValueChange(event)"></p1-slider>
+<h1 id="myValue"></h1>
+
+<script>
+  const h1 = document.getElementById('myValue');
+  function onValueChange(event) {
+    h1.innerHTML = event.detail;
+  }
+</script>
+
+</body>
+</html>
