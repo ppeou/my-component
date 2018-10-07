@@ -15,6 +15,7 @@ class P1Slider extends PolymerElement {
     return html`      
       <link rel="stylesheet" href="[[compRoot]]css/jquery-ui.css">
       <style>
+        :host {display: block;}
       </style>
       <div id="slider"></div>
     `;
@@ -23,8 +24,9 @@ class P1Slider extends PolymerElement {
   ready() {
     super.ready();
     const {value, min, max, step} = this;
+    console.log(value);
     $(this.$.slider).slider({
-      value,
+      value: parseInt(value),
       min,
       max,
       step,
