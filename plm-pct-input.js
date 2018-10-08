@@ -5,7 +5,7 @@ class PlmPctInput extends PolymerElement {
   static get properties() {
     return {
       cssClass: String,
-      value: {type: Number, notify: true, reflectToAttribute: true, observer:'_onTopDownChanged'},
+      value: {type: Number, reflectToAttribute: true, observer:'_onTopDownChanged'},
       _value: {type: Number},
       grade: String,
     };
@@ -38,6 +38,14 @@ class PlmPctInput extends PolymerElement {
     let {target: {value} } = e;
     this.value = this._handleStringNumber(value);
     this._updateCssClass(this.value);
+
+    const ev = new CustomEvent('value-changed', {
+      detail: {
+        value: this.value,
+      },
+      bubbles: true, composed: true
+    });
+    this.dispatchEvent(ev);
   }
 
   _updateCssClass(newValue) {
