@@ -10,11 +10,18 @@
   <script type="module" src="../plm-pct-input.js"></script>
 </head>
 <body>
-<style>
 
-</style>
 <div class="vertical-section-container centered">
-  <plm-pct-input></plm-pct-input>
+  <plm-pct-input id="abc" onvaluechanged="def(event)"></plm-pct-input>
 </div>
+<script type="text/javascript">
+
+  document.getElementById('abc').addEventListener('value-changed', function(e) {
+    console.log(e);
+  });
+  function def(event) {
+    console.log(event);
+  }
+</script>
 </body>
 </html>
